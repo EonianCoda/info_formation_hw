@@ -2,7 +2,7 @@ VENV := venv
 MKDIR = mkdir -p
 .PHONY: all enc dec
 
-all: enc dec
+all: install enc dec
 
 install: venv
 	sudo apt install python3-pip
