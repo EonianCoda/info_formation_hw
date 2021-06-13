@@ -5,7 +5,7 @@ import argparse
 def fast_exp_mod(x, h, n):
     """fast exponentiation and modular
     
-    use square and multiply algorithm to fasten the big number exponentiation
+    use square and multiply algorithm to speed up the big number exponentiation
     
     Args:
         x: base
@@ -99,8 +99,8 @@ class RSA(object):
         self.phi = (self.p - 1)*(self.q - 1)
         self.e, self.d = gen_key(self.phi)
         
+        #use CRT algorithm to speed up the decryption
         self.inverse_p = inverse_mod(self.p, self.q)
-        
         self.d_p = self.d % (self.p - 1)
         self.d_q = self.d % (self.q - 1)
     
